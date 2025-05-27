@@ -26,20 +26,12 @@
 <body>
   <h1>Site!</h1> <!--isso é um comentario em html-->
 
-  <button onclick="dizerOla()">Clique</button>
 
   <script>
-    function dizerOla() {
-       var gostou = window.confirm('Gostou do site?');//comentario em js
-       var nome = window.prompt('Você se chama como?');
-
-      if (gostou && nome) {
-        alert(`Legal, `+ nome+ `! Obrigado pelo feedback!`);
-      } else {
-        alert('Tudo bem! Obrigado por visitar mesmo assim.');
-      } 
-    }
-    
+    var n1 = Number(window.prompt('Digite um numero:'))
+    var n2 = Number(window.prompt('Digite outro numero:'))
+    var s = (n1) + (n2)
+    window.alert(`A soma entre ${n1} e ${n2} = a ${s}`)
   </script>
   
 </body>
