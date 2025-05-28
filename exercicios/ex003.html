@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Par ou Ímpar</title>
+  <style>
+    body {
+      background: rgb(80, 73, 73);
+      color: white;
+      font: normal 20pt Arial;
+      text-align: left;
+    }
+
+    #resultado {
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .pulsar {
+      animation: pulsar 0.8s ease;
+    }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.9); }
+      60% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Verificar se é par ou ímpar:
+    <input type="number" id="numero" placeholder="Digite um número" />
+    <button onclick="VerificarParOuImpar()">Verificar</button>
+    <p id="resultado"></p>
+  </h1>
+
+  <script>
+    function VerificarParOuImpar() {
+      const numero = Number(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+
+      // Remove a animação anterior (caso ainda esteja ativa)
+      resultado.classList.remove("pulsar");
+
+      if (isNaN(numero)) {
+        resultado.textContent = "Por favor, digite um número válido!";
+        resultado.style.color = "yellow";
+      } else if (numero % 2 === 0) {
+        resultado.textContent = `${numero} é par`;
+        resultado.style.color = "limegreen";
+      } else {
+        resultado.textContent = `${numero} é ímpar`;
+        resultado.style.color = "tomato";
+      }
+
+      // Reaplica a animação
+      void resultado.offsetWidth; // truque pra reiniciar a animação
+      resultado.classList.add("pulsar");
+
+      // Limpa o input
+      document.getElementById("numero").value = "";
+    }
+  </script>
+</body>
+</html>

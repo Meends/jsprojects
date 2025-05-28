@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aeroporto</title>
+    <style>
+        h1{
+            font: normal 40pt arial;
+            color: black
+        }
+        p{
+            margin-top: 20px;
+        }
+        body{
+            font: normal 30pt arial;
+            color: green
+        }
+        input{
+            margin-top: 20pt;
+            font:normal 20pt arial;
+            color:aquamarine;
+            width: 150px;
+        }
+        div#res{
+            font:normal 18  pt arial;
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <h1>você é estrangeiro?</h1>
+    <p>Qual país você mora?</p>
+<input type="text" name="brcheck" id="brcheck" placeholder="Digite aqui">
+    <div id="res"></div>
+
+    <script>
+        
+        document.getElementById("brcheck").addEventListener('keydown', enter)
+        function enter(event){
+            if (event.key === 'Enter'){
+                const input = document.getElementById('brcheck');
+                var country=window.document.getElementById('brcheck').value;
+                var res = document.getElementById('res');
+                if (country.toLowerCase()==='brasil'){
+                    res.innerHTML = "Você é brasileiro!"
+                }
+                else{
+                    res.innerHTML = "hello world!"
+                }
+                
+
+            }
+
+        }
+
+    </script>    
+</body>
+</html>

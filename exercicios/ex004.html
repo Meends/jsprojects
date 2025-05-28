@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>número maior ou menor?</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font: normal 20pt Arial;
+            text-align: left;
+            margin-right: auto;
+        }
+        #resultado {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificar qual número é maior ou menor</h1>
+
+    <input type="number" id="numero_um" placeholder="Digite um número">
+    <input type="number" id="numero_dois" placeholder="Digite um número">
+    <button onclick="VerificarMaiorOuMenor()">Verificar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function VerificarMaiorOuMenor() {
+            var numero_um = Number(document.getElementById("numero_um").value);
+            var numero_dois = Number(document.getElementById("numero_dois").value);
+            var resultado = document.getElementById("resultado");
+
+            if (numero_um > numero_dois) {
+                resultado.textContent = `O número ${numero_um} é maior que o número ${numero_dois}.`;
+                resultado.style.color = 'limegreen';
+            } else if (numero_um < numero_dois) {
+                resultado.textContent = `O número ${numero_um} é menor que o número ${numero_dois}.`;
+                resultado.style.color = 'limegreen';
+            } else {
+                resultado.textContent = `O número ${numero_um} é igual ao número ${numero_dois}.`;
+                resultado.style.color = 'tomato';
+            }
+        }
+    </script>
+</body>
+</html>
